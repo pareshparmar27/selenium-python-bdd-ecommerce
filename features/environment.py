@@ -1,6 +1,9 @@
 from selenium import webdriver
+
+from pages.GuestPage import GuestPage
 from pages.HomePage import HomePage
 from pages.LoginPage import LoginPage
+from pages.ProductPage import ProductPage
 from utils import ConfigReader
 
 
@@ -29,3 +32,5 @@ def after_scenario(context, driver):
 def initialize_pages(context, driver):
     context.login_page = LoginPage(context.driver)
     context.home_page = HomePage(context.driver)
+    context.product_page = ProductPage(context.driver)
+    context.guest_page = GuestPage(context.driver)

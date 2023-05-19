@@ -4,7 +4,6 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 
 class HomePage(BasePage):
-    header = ".maintext"
     error = ".alert-error"
     categories = '.categorymenu > li > a'
     subCategories = '.subcategories > ul > li'
@@ -15,9 +14,6 @@ class HomePage(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
-
-    def get_header(self):
-        return self.driver.find_element(By.CSS_SELECTOR, self.header).text
 
     def get_error_message(self):
         return self.driver.find_element(By.CSS_SELECTOR, self.error).text
@@ -66,3 +62,4 @@ class HomePage(BasePage):
                 return "£"
             case default:
                 raise ValueError(currency + " currency is not supported...")
+
